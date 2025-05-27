@@ -5,3 +5,4 @@ declare class NFEStatusServico implements NFEStatusServicoServiceImpl {
     Exec(data?: any): Promise<any>;
 }
 export default NFEStatusServico;
+//# sourceMappingURL=NFEStatusServico.d.ts.map

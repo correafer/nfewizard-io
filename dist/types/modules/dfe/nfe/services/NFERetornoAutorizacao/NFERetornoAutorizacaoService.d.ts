@@ -49,3 +49,4 @@ declare class NFERetornoAutorizacaoService extends BaseNFE implements NFERetorno
     }>;
 }
 export default NFERetornoAutorizacaoService;
+//# sourceMappingURL=NFERetornoAutorizacaoService.d.ts.map

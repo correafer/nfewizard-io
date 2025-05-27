@@ -5,3 +5,4 @@ declare class NFECartaDeCorrecao implements NFERecepcaoEventoServiceImpl {
     Exec(data?: any): Promise<any>;
 }
 export default NFECartaDeCorrecao;
+//# sourceMappingURL=NFECartaDeCorrecao.d.ts.map

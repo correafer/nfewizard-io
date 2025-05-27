@@ -7,3 +7,4 @@ export interface NFERecepcaoEventoServiceImpl {
         response: GenericObject[];
     }>;
 }
+//# sourceMappingURL=NFERecepcaoEventoServiceImpl.d.ts.map

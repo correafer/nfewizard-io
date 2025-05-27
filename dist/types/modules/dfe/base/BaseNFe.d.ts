@@ -26,3 +26,4 @@ declare abstract class BaseNFE {
     Exec(data?: any): Promise<any>;
 }
 export default BaseNFE;
+//# sourceMappingURL=BaseNFe.d.ts.map

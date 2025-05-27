@@ -5,3 +5,4 @@ declare class NFEEpec implements NFERecepcaoEventoServiceImpl {
     Exec(data?: any): Promise<any>;
 }
 export default NFEEpec;
+//# sourceMappingURL=NFEEpec.d.ts.map

@@ -9,3 +9,4 @@ export interface NFCEAutorizacaoServiceImpl {
         }[];
     }>;
 }
+//# sourceMappingURL=NFCEAutorizacaoServiceImpl.d.ts.map

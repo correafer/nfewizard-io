@@ -8,3 +8,4 @@ declare class MailController {
     sendEmail(mailParams: EmailParams): void;
 }
 export default MailController;
+//# sourceMappingURL=MailAdapter.d.ts.map

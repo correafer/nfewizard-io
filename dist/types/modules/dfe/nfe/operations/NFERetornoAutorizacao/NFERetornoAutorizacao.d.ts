@@ -15,3 +15,4 @@ declare class NFERetornoAutorizacao implements NFERetornoAutorizacaoServiceImpl 
     }>;
 }
 export default NFERetornoAutorizacao;
+//# sourceMappingURL=NFERetornoAutorizacao.d.ts.map

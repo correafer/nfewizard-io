@@ -30,3 +30,4 @@ declare class NFEAutorizacaoService extends BaseNFE implements NFEAutorizacaoSer
     }>;
 }
 export default NFEAutorizacaoService;
+//# sourceMappingURL=NFEAutorizacaoService.d.ts.map

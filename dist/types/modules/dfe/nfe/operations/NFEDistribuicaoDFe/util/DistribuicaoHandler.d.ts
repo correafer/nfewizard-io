@@ -20,3 +20,4 @@ declare class DistribuicaoHandler {
     handleResponse(XMLDistribuicaoInJson: GenericObject, XMLDistribuicao: string, chNFe: string): void;
 }
 export default DistribuicaoHandler;
+//# sourceMappingURL=DistribuicaoHandler.d.ts.map

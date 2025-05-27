@@ -36,8 +36,7 @@ import QRCode from 'qrcode';
 import { fileURLToPath } from 'url';
 import ValidaCPFCNPJ from '@Core/utils/ValidaCPFCNPJ';
 import { getDesTipoPag } from '@Core/utils/getDesTipoPag';
-
-const baseDir = path.dirname(fileURLToPath(import.meta.url))
+const baseDir = __dirname;
 const fontDir = process.env.NODE_ENV === 'production' ? '../resources/fonts/ARIAL.TTF' : '../../../../resources/fonts/ARIAL.TTF';
 const fontDirBold = process.env.NODE_ENV === 'production' ? '../resources/fonts/ARIALBD.TTF' : '../../../../resources/fonts/ARIALBD.TTF';
 

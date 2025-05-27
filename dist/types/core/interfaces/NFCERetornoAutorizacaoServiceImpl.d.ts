@@ -11,3 +11,4 @@ export interface NFCERetornoAutorizacaoServiceImpl {
         data: string[];
     }>;
 }
+//# sourceMappingURL=NFCERetornoAutorizacaoServiceImpl.d.ts.map

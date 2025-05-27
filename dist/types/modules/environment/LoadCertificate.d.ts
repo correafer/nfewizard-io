@@ -9,3 +9,4 @@ declare class LoadCertificate {
     loadCertificate(): Promise<CertificateLoadReturn>;
 }
 export default LoadCertificate;
+//# sourceMappingURL=LoadCertificate.d.ts.map

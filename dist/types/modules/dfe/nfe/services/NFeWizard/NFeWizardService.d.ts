@@ -70,3 +70,4 @@ declare class NFeWizardService implements NFeWizardServiceImpl {
     private validateEnvironment;
 }
 export default NFeWizardService;
+//# sourceMappingURL=NFeWizardService.d.ts.map

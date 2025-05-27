@@ -5,3 +5,4 @@ declare class NFECienciaDaOperacao implements NFERecepcaoEventoServiceImpl {
     Exec(data?: any): Promise<any>;
 }
 export default NFECienciaDaOperacao;
+//# sourceMappingURL=NFECienciaDaOperacao.d.ts.map

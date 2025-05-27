@@ -38,3 +38,4 @@ declare class NFERecepcaoEventoService extends BaseNFE implements NFERecepcaoEve
     }>;
 }
 export default NFERecepcaoEventoService;
+//# sourceMappingURL=NFERecepcaoEventoService.d.ts.map

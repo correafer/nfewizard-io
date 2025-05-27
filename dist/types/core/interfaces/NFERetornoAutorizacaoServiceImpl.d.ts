@@ -11,3 +11,4 @@ export interface NFERetornoAutorizacaoServiceImpl {
         data: string[];
     }>;
 }
+//# sourceMappingURL=NFERetornoAutorizacaoServiceImpl.d.ts.map

@@ -18,3 +18,4 @@ declare class NFEInutilizacaoService extends BaseNFE implements NFEInutilizacaoS
     gerarXmlNFeInutilizacao(data: InutilizacaoData): string;
 }
 export default NFEInutilizacaoService;
+//# sourceMappingURL=NFEInutilizacaoService.d.ts.map

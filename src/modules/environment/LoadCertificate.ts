@@ -6,8 +6,7 @@ import forge from 'node-forge';
 
 import { fileURLToPath } from 'url';
 import path from 'path';
-
-const baseDir = path.dirname(fileURLToPath(import.meta.url));
+const baseDir = __dirname;
 const dir = process.env.NODE_ENV === 'production' ? '../resources/certs' : '../../resources/certs';
 
 class LoadCertificate {

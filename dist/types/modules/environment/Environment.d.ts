@@ -18,3 +18,4 @@ declare class Environment {
     }>;
 }
 export default Environment;
+//# sourceMappingURL=Environment.d.ts.map

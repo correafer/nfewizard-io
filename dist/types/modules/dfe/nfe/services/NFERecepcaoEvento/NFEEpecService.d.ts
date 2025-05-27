@@ -8,3 +8,4 @@ declare class NFEEpecService extends NFERecepcaoEventoService {
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
 }
 export default NFEEpecService;
+//# sourceMappingURL=NFEEpecService.d.ts.map

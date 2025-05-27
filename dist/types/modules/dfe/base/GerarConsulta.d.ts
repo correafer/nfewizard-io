@@ -15,3 +15,4 @@ declare class GerarConsulta implements GerarConsultaImpl {
     }>;
 }
 export default GerarConsulta;
+//# sourceMappingURL=GerarConsulta.d.ts.map

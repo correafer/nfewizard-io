@@ -9,3 +9,4 @@ declare class HttpClientBuilder<T> {
     createHttpClient(): T;
 }
 export default HttpClientBuilder;
+//# sourceMappingURL=HttpClientBuilder.d.ts.map

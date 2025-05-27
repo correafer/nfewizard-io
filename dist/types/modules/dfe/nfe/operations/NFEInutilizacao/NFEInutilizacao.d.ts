@@ -5,3 +5,4 @@ declare class NFEInutilizacao implements NFEInutilizacaoServiceImpl {
     Exec(data?: any): Promise<any>;
 }
 export default NFEInutilizacao;
+//# sourceMappingURL=NFEInutilizacao.d.ts.map

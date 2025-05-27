@@ -53,3 +53,4 @@ declare class NFCERetornoAutorizacaoService extends BaseNFE implements NFCERetor
     }>;
 }
 export default NFCERetornoAutorizacaoService;
+//# sourceMappingURL=NFCERetornoAutorizacaoService.d.ts.map

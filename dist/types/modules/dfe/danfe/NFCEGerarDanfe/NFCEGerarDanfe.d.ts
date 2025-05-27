@@ -44,3 +44,4 @@ declare class NFCEGerarDanfe {
     }>;
 }
 export default NFCEGerarDanfe;
+//# sourceMappingURL=NFCEGerarDanfe.d.ts.map

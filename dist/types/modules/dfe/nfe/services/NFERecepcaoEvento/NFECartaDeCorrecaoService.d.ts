@@ -8,3 +8,4 @@ declare class NFECartaDeCorrecaoService extends NFERecepcaoEventoService {
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
 }
 export default NFECartaDeCorrecaoService;
+//# sourceMappingURL=NFECartaDeCorrecaoService.d.ts.map

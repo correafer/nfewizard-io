@@ -8,3 +8,4 @@ declare class NFEDesconhecimentoDaOperacaoService extends NFERecepcaoEventoServi
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
 }
 export default NFEDesconhecimentoDaOperacaoService;
+//# sourceMappingURL=NFEDesconhecimentoDaOperacaoService.d.ts.map

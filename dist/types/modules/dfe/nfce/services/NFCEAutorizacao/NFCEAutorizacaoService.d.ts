@@ -31,3 +31,4 @@ declare class NFCEAutorizacaoService extends BaseNFE implements NFCEAutorizacaoS
     }>;
 }
 export default NFCEAutorizacaoService;
+//# sourceMappingURL=NFCEAutorizacaoService.d.ts.map
