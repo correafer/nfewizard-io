@@ -1,10 +1,11 @@
-import Environment from '../../../../../../modules/environment/Environment.js';
-import Utility from '../../../../../../core/utils/Utility.js';
-import XmlBuilder from '../../../../../../adapters/XmlBuilder.js';
+import Environment from '@Modules/environment/Environment.js';
+import Utility from '@Utils/Utility.js';
+import XmlBuilder from '@Adapters/XmlBuilder.js';
 import { AxiosInstance } from 'axios';
-import { GerarConsultaImpl, SaveFilesImpl } from '../../../../../../core/interfaces/index';
+import { GerarConsultaImpl, SaveFilesImpl } from '@Interfaces';
 import NFEDistribuicaoDFeService from './NFEDistribuicaoDFeService.js';
 declare class NFEDistribuicaoDFePorNSUService extends NFEDistribuicaoDFeService {
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
 }
 export default NFEDistribuicaoDFePorNSUService;
+//# sourceMappingURL=NFEDistribuicaoDFePorNSU.d.ts.map

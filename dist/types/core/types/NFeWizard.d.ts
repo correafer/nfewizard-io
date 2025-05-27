@@ -171,3 +171,4 @@ export type NFeWizardProps = {
         useForSchemaValidation?: 'validateSchemaJavaBased' | 'validateSchemaJsBased';
     };
 };
+//# sourceMappingURL=NFeWizard.d.ts.map

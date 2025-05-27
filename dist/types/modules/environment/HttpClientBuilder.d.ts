@@ -1,6 +1,6 @@
-import { NFeWizardProps } from '../../../core/types/index';
+import { NFeWizardProps } from '@Types';
 import https from 'https';
-import { HttpClient } from '../../../core/interfaces/index';
+import { HttpClient } from '@Interfaces';
 declare class HttpClientBuilder<T> {
     private config;
     private agent;
@@ -9,3 +9,4 @@ declare class HttpClientBuilder<T> {
     createHttpClient(): T;
 }
 export default HttpClientBuilder;
+//# sourceMappingURL=HttpClientBuilder.d.ts.map

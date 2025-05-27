@@ -1,5 +1,5 @@
-import { ConsultaNFe } from '../../../core/types/NFEDistribuicaoDFe';
-import { GenericObject } from '../../../core/types/Utils';
+import { ConsultaNFe } from '@Types/NFEDistribuicaoDFe';
+import { GenericObject } from '@Types/Utils';
 export interface NFEDistribuicaoDFeServiceImpl {
     Exec(data: ConsultaNFe): Promise<{
         data: GenericObject;
@@ -7,3 +7,4 @@ export interface NFEDistribuicaoDFeServiceImpl {
         filesList: string[];
     }>;
 }
+//# sourceMappingURL=NFEDistribuicaoDFeServiceImpl.d.ts.map

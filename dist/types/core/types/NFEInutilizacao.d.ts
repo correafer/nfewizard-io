@@ -8,3 +8,4 @@ export type InutilizacaoData = {
     nNFFin: string;
     xJust: string;
 };
+//# sourceMappingURL=NFEInutilizacao.d.ts.map

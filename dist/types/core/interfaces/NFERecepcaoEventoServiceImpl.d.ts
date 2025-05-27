@@ -1,5 +1,5 @@
-import { EventoNFe } from '../../../core/types/NFERecepcaoEvento';
-import { GenericObject } from '../../../core/types/Utils';
+import { EventoNFe } from '@Types/NFERecepcaoEvento';
+import { GenericObject } from '@Types/Utils';
 export interface NFERecepcaoEventoServiceImpl {
     Exec(data: EventoNFe): Promise<{
         success: boolean;
@@ -7,3 +7,4 @@ export interface NFERecepcaoEventoServiceImpl {
         response: GenericObject[];
     }>;
 }
+//# sourceMappingURL=NFERecepcaoEventoServiceImpl.d.ts.map

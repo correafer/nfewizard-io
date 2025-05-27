@@ -1,4 +1,4 @@
-import { LayoutNFe, NFe, ProtNFe, GenericObject } from '../../../core/types/index';
+import { LayoutNFe, NFe, ProtNFe, GenericObject } from '@Types';
 export interface NFCEAutorizacaoServiceImpl {
     Exec(data: NFe): Promise<{
         success: boolean;
@@ -9,3 +9,4 @@ export interface NFCEAutorizacaoServiceImpl {
         }[];
     }>;
 }
+//# sourceMappingURL=NFCEAutorizacaoServiceImpl.d.ts.map

@@ -1,6 +1,6 @@
-import Utility from '../../../../../../../core/utils/Utility.js';
-import { GenericObject } from '../../../../../../../core/types/index';
-import Environment from '../../../../../../../modules/environment/Environment.js';
+import Utility from '@Utils/Utility.js';
+import { GenericObject } from '@Types';
+import Environment from '@Modules/environment/Environment.js';
 import { AxiosResponse } from 'axios';
 declare class DistribuicaoHandler {
     environment: Environment;
@@ -20,3 +20,4 @@ declare class DistribuicaoHandler {
     handleResponse(XMLDistribuicaoInJson: GenericObject, XMLDistribuicao: string, chNFe: string): void;
 }
 export default DistribuicaoHandler;
+//# sourceMappingURL=DistribuicaoHandler.d.ts.map

@@ -1,4 +1,4 @@
-import { CertificateLoadReturn, NFeWizardProps } from '../../../core/types/index';
+import { CertificateLoadReturn, NFeWizardProps } from '@Types';
 declare class LoadCertificate {
     private config;
     private certificate;
@@ -9,3 +9,4 @@ declare class LoadCertificate {
     loadCertificate(): Promise<CertificateLoadReturn>;
 }
 export default LoadCertificate;
+//# sourceMappingURL=LoadCertificate.d.ts.map

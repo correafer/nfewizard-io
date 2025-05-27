@@ -1,5 +1,5 @@
-import { NFCERetornoAutorizacaoServiceImpl } from '../../../../../../core/interfaces/index';
-import { ProtNFe } from '../../../../../../core/types/NFEAutorizacao';
+import { NFCERetornoAutorizacaoServiceImpl } from '@Interfaces';
+import { ProtNFe } from '@Types/NFEAutorizacao';
 declare class NFCERetornoAutorizacao implements NFCERetornoAutorizacaoServiceImpl {
     nfceAutorizacaoRetornoService: NFCERetornoAutorizacaoServiceImpl;
     constructor(nfceAutorizacaoRetornoService: NFCERetornoAutorizacaoServiceImpl);
@@ -15,3 +15,4 @@ declare class NFCERetornoAutorizacao implements NFCERetornoAutorizacaoServiceImp
     }>;
 }
 export default NFCERetornoAutorizacao;
+//# sourceMappingURL=NFCERetornoAutorizacao.d.ts.map

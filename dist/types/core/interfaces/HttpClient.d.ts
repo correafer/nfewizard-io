@@ -7,3 +7,4 @@ export interface HttpClientConfig {
     timeout: number;
     agent?: https.Agent;
 }
+//# sourceMappingURL=HttpClient.d.ts.map

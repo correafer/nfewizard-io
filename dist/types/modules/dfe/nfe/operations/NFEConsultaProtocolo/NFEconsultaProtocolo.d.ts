@@ -1,7 +1,8 @@
-import { NFEconsultaProtocoloServiceImpl } from '../../../../../../core/interfaces/index';
+import { NFEconsultaProtocoloServiceImpl } from '@Interfaces';
 declare class NFEConsultaProtocolo implements NFEconsultaProtocoloServiceImpl {
     nfeConsultaProtocoloService: NFEconsultaProtocoloServiceImpl;
     constructor(nfeConsultaProtocoloService: NFEconsultaProtocoloServiceImpl);
     Exec(data?: any): Promise<any>;
 }
 export default NFEConsultaProtocolo;
+//# sourceMappingURL=NFEconsultaProtocolo.d.ts.map

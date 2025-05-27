@@ -12,3 +12,4 @@ export * from './NFEInutilizacaoServiceImpl';
 export * from './NFERetornoAutorizacaoServiceImpl';
 export * from './NFCEAutorizacaoServiceImpl';
 export * from './NFCERetornoAutorizacaoServiceImpl';
+//# sourceMappingURL=index.d.ts.map

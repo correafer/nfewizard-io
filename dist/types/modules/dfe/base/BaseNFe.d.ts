@@ -1,8 +1,8 @@
-import Environment from '../../../../modules/environment/Environment.js';
-import XmlBuilder from '../../../../adapters/XmlBuilder.js';
+import Environment from '@Modules/environment/Environment.js';
+import XmlBuilder from '@Adapters/XmlBuilder.js';
 import Utility from '../../../core/utils/Utility.js';
 import { AxiosInstance } from 'axios';
-import { SaveFilesImpl, GerarConsultaImpl } from '../../../../core/interfaces/index';
+import { SaveFilesImpl, GerarConsultaImpl } from '@Interfaces';
 declare abstract class BaseNFE {
     environment: Environment;
     utility: Utility;
@@ -26,3 +26,4 @@ declare abstract class BaseNFE {
     Exec(data?: any): Promise<any>;
 }
 export default BaseNFE;
+//# sourceMappingURL=BaseNFe.d.ts.map

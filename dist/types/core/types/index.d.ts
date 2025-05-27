@@ -7,3 +7,4 @@ export * from './NFERecepcaoEvento';
 export * from './NFeWizard';
 export * from './Utils';
 export * from './LoadCertificate';
+//# sourceMappingURL=index.d.ts.map
