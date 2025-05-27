@@ -44,4 +44,12 @@ export type NFEGerarDanfeProps = {
      */
     // pageWidth: 226.772 | 158.74;
     pageWidth?: number;
+        /**
+     * @param {string} logoUrl - URL do logo 
+     */
+    logoUrl?: string;
+            /**
+     * @param {string} returnType - base64 |  buffer | file
+     */
+    returnType?: string;
 };

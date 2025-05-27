@@ -22,6 +22,7 @@ import { format } from 'date-fns';
 import PDFDocument from 'pdfkit';
 import { fileURLToPath } from 'url';
 import ValidaCPFCNPJ from '@Core/utils/ValidaCPFCNPJ';
+import axios from 'axios';
 
 
 class NFEGerarDanfe {
@@ -41,13 +42,21 @@ class NFEGerarDanfe {
     exibirMarcaDaguaDanfe?: boolean;
     doc: InstanceType<typeof PDFDocument>;
     barcodeBuffer: Buffer | null = null;
+    logoUrl?: string; // Added logoUrl property
+    logoBuffer: Buffer | null = null;
 
+    private productTableCurrentY: number = 0;
+    private productTableHeaderHeight: number = 15; // defaultItemHeight in _buildProdutos
+    private productTablePageNumber: number = 0;
+    returnType?: string | undefined;
+    
     constructor(props: NFEGerarDanfeProps) {
-        const { data, chave, outputPath } = props;
-
+        const { data, chave, outputPath, logoUrl,returnType } = props; // Destructure logoUrl
+        this.returnType = returnType;
         this.data = data;
         this.chave = chave.trim();
         this.outputPath = outputPath;
+        this.logoUrl = logoUrl; // Initialize logoUrl
         this.enviada = false;
         this.documento = new ValidaCPFCNPJ();
         this.protNFe = data.protNFe;
@@ -188,20 +197,59 @@ class NFEGerarDanfe {
             this.doc.fontSize(5).text(`IDENTIFICAÇÃO DO EMITENTE`, 10, topIdentificacao_1 + 3.5, {
                 characterSpacing: 0.5,
             });
-            this.doc.fontSize(8).font('Times-Bold').text(this.emit.xNome, 35, topIdentificacao_1 + 14, {
+        
+            let currentY = topIdentificacao_1 + 8 // Start Y for content below the label
+            const contentX = left + 5; // X for centered text content, giving 5pt padding
+            const contentWidth = 197.5 - 10; // Width for centered text content
+        
+            if (this.logoBuffer) { // Use logoBuffer instead of logoUrl
+                try {
+                    const logoMaxHeight = 20;
+                    const logoMaxWidth = 62;  
+                    
+                    this.doc.image(this.logoBuffer, left + logoMaxWidth+10, currentY, { // Use logoBuffer
+                        fit: [logoMaxWidth, logoMaxHeight], 
+                    });
+                    currentY += logoMaxHeight + 3;
+                } catch (e) {
+                    console.error("Error rendering logo:", e);
+                    currentY += 5;
+                }
+            } else {
+                currentY += 5;
+            }
+        
+            // Company Name - Centered below the logo area
+            this.doc.font('Times-Bold').fontSize(7);
+            const companyNameText = this.emit.xNome || '';
+            const companyNameHeight = this.doc.heightOfString(companyNameText, { 
+                width: contentWidth, 
+                align: 'center', 
+                lineBreak: true, 
+                lineGap: 4 
+            });
+            this.doc.text(companyNameText, contentX, currentY, {
                 characterSpacing: 1,
-                width: 170,
+                width: contentWidth,
+                align: 'center',
                 lineBreak: true,
                 lineGap: 4
             });
-            this.doc.fontSize(7).font('Times-Roman').text(`${this.emit.enderEmit.xLgr}, ${this.emit.enderEmit.nro} ${this.emit.xFant ? `- ${this.emit.xFant}` : ''}`, 10, topIdentificacao_1 + 44, {
+            currentY += companyNameHeight + 4; // Add company name height and padding
+        
+            // Address details - Centered below company name
+            this.doc.font('Times-Roman').fontSize(7);
+            const addressLine1 = `${this.emit.enderEmit.xLgr}, ${this.emit.enderEmit.nro} ${this.emit.xFant ? `- ${this.emit.xFant}` : ''}`;
+            const fullAddressText = addressLine1 + identificationJoined; // identificationJoined starts with \n
+        
+            this.doc.text(fullAddressText, contentX, currentY, {
                 characterSpacing: 1,
-                width: 181,
+                width: contentWidth,
+                align: 'center', // Center the whole address block
                 lineBreak: true,
-                lineGap: 2,
-                continued: true
-            }).text(identificationJoined);
-        }
+                lineGap: 2
+            });
+        };
 
         /** IDENTIFICACAO NFe */
         const _buildIdentificacaoDanfe = () => {
@@ -479,7 +527,7 @@ class NFEGerarDanfe {
             this.doc.fontSize(5).text('INSCRIÇÃO ESTADUAL', left + 403.5, topDestinatario + 171, {
                 characterSpacing: 0.5,
             });
-            this.doc.fontSize(8).text(String(this.dest?.indIEDest || ''), left + 403.5, topDestinatario + 181, {
+            this.doc.fontSize(8).text(String(this.dest?.IE || ''), left + 403.5, topDestinatario + 181, {
                 characterSpacing: 1,
             });
 
@@ -1144,6 +1192,9 @@ class NFEGerarDanfe {
         }
     }
 
+    private _isFirstPage(): boolean {
+        return this.doc.bufferedPageRange().start === 0;
+    }
     _buildFooter() {
         const { left } = this.doc.page.margins;
 
@@ -1186,37 +1237,97 @@ class NFEGerarDanfe {
         // .rotate(45, { origin: [0, 0] })
     }
 
-    async generatePDF(exibirMarcaDaguaDanfe?: boolean) {
+    async generatePDF(exibirMarcaDaguaDanfe?: boolean): Promise<{ message: string; success: boolean; outputPath?: string } | Buffer | string>  {
         try {
-            this.exibirMarcaDaguaDanfe = exibirMarcaDaguaDanfe || true;
-            const chave = this.chave;
+            this.exibirMarcaDaguaDanfe = false;
+            
+            if (this.logoUrl) {
+                if (this.logoUrl.startsWith('http://') || this.logoUrl.startsWith('https://')) {
+                    try {
+                        const response = await axios.get(this.logoUrl, { responseType: 'arraybuffer' });
+                        this.logoBuffer = Buffer.from(response.data);
+                    } catch (error) {
+                        console.error(`Failed to fetch logo from URL: ${this.logoUrl}.`, error);
+                        this.logoBuffer = null;
+                    }
+                } else {
+                    if (fs.existsSync(this.logoUrl)) {
+                        try {
+                            this.logoBuffer = fs.readFileSync(this.logoUrl);
+                        } catch (error) {
+                            console.error(`Failed to read logo from local path: ${this.logoUrl}.`, error);
+                            this.logoBuffer = null;
+                        }
+                    } else {
+                        console.error(`Logo file not found at local path: ${this.logoUrl}.`);
+                        this.logoBuffer = null;
+                    }
+                }
+            }
 
-            await this.generateBarcode(chave);
+            await this.generateBarcode(this.chave.replace(/\D/g, ''));
 
-            this.doc.pipe(fs.createWriteStream(this.outputPath));
+            // --- Drawing Setup ---
+            this.productTableCurrentY = 0; // Reset for each generation
+            this.productTablePageNumber = 0;
 
-            this.drawHeader(true);
+            this.doc.on('pageAdded', () => {
+                this.drawHeader(false); // Main header for new page
+                this.drawFooter();    // Main footer for new page
+                // Product table header continuation is handled within _buildProdutos
+                this.productTablePageNumber++;
+                // Reset Y for product table content on new page, accounting for main header
+                this.productTableCurrentY = this.doc.page.margins.top + (this._isFirstPage() && this.productTablePageNumber === 0 ? 52 : 0) + 144 + 20; // Approx Y after _buildHeader(0) + space
+            });
 
+            this.drawHeader(true); // First page main header
             this._buildDestinatario();
             this._builCalculoImposto();
-            this._builTransporte();
+            this._builTransporte(); // This will set this.productTableCurrentY
 
-            this.doc.on('pageAdded', () => {
-                this.drawHeader(false);
-            });
-            this.drawFooter();
-            this.doc.on('pageAdded', () => {
-                this.drawFooter();
-            });
+            this._buildProdutos(); // Draws products, handles its own table headers on new pages
 
-            this._buildProdutos();
-            this.doc.end();
+            this.drawFooter(); // Draw footer on the last page explicitly
 
-            return {
-                message: `  DANFE Gerada em '${this.outputPath}'`,
-                success: true,
-            };
+            // --- Output Handling ---
+            if (this.returnType === 'file') {
+                if (!this.outputPath) {
+                    throw new Error("outputPath is required when returnType is 'file'.");
+                }
+                const stream = fs.createWriteStream(this.outputPath);
+                this.doc.pipe(stream);
+                this.doc.end();
+                return new Promise((resolve, reject) => {
+                    stream.on('finish', () => resolve({ message: `DANFE Gerada em '${this.outputPath}'`, success: true, outputPath: this.outputPath }));
+                    stream.on('error', reject);
+                });
+            } else {
+                // Return as Buffer or Base64
+                return new Promise<Buffer | string>((resolve, reject) => {
+                    const buffers: any[] = [];
+                    this.doc.on('data', buffers.push.bind(buffers));
+                    this.doc.on('error', reject);
+                    this.doc.on('end', () => {
+                        const pdfBuffer = Buffer.concat(buffers);
+                        if (this.returnType === 'base64') {
+                            resolve(pdfBuffer.toString('base64'));
+                        } else { // 'buffer'
+                            resolve(pdfBuffer);
+                        }
+                    });
+                    this.doc.end();
+                });
+            }
+
         } catch (error: any) {
+            console.error("Error in NFEGerarDanfe.generatePDF:", error);
+            // If returning a promise for buffer/base64, we should ensure it's rejected.
+            // For file return, the promise from stream handles it.
+            // The current structure will throw synchronously before promise creation if error is early.
+            if (this.returnType === 'buffer' || this.returnType === 'base64') {
+                 return Promise.reject(new Error(`Erro ao gerar DANFE: ${error.message}`));
+            }
+            // For file type, the error might be caught before stream promise is returned.
             throw new Error(`Erro ao gerar DANFE: ${error.message}`);
         }
     }

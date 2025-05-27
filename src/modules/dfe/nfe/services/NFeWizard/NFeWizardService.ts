@@ -409,9 +409,13 @@ class NFeWizardService implements NFeWizardServiceImpl {
             const distribuicaoDFe = new NFEGerarDanfe(data);
             const response = await distribuicaoDFe.generatePDF(exibirMarcaDaguaDanfe);
 
-            console.log('Retorno NFE_GerarDanfe');
-            console.log(response.message);
-            console.log('===================================');
+           if (typeof response === 'object' && response !== null && 'message' in response) {
+    console.log(response.message); // Agora o TS sabe que tem message
+} else if (typeof response === 'string') {
+    console.log('Retorno é uma string base64');
+} else if (Buffer.isBuffer(response)) {
+    console.log('Retorno é um Buffer');
+}
 
             return response
         } catch (error: any) {

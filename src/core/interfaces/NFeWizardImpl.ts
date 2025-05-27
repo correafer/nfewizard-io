@@ -48,10 +48,9 @@ export interface NFeWizardImpl {
         protNFe: ProtNFe;
     }[]>;
     NFE_Inutilizacao(data: InutilizacaoData): Promise<any>;
-    NFE_GerarDanfe(data: NFEGerarDanfeProps): Promise<{
-        message: string;
-        success: boolean;
-    }>;
+    NFE_GerarDanfe(data: NFEGerarDanfeProps): Promise<
+        string | Buffer | { message: string; success: boolean; outputPath?: string }
+    >;
     NFCE_GerarDanfe(data: NFEGerarDanfeProps): Promise<{
         message: string;
         success: boolean;
