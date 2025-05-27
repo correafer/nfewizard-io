@@ -1,7 +1,7 @@
 base_conhecimento
 node_modules
 tmp
-dist
+
 src/metodos
 src/__tests__
 src/classes/FieldOrganizer.ts

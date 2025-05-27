@@ -1,0 +1,7 @@
+import { NFERecepcaoEventoServiceImpl } from '../../../../../../core/interfaces/NFERecepcaoEventoServiceImpl.js';
+declare class NFECartaDeCorrecao implements NFERecepcaoEventoServiceImpl {
+    nfeCartaDeCorrecaoServiceService: NFERecepcaoEventoServiceImpl;
+    constructor(nfeCartaDeCorrecaoServiceService: NFERecepcaoEventoServiceImpl);
+    Exec(data?: any): Promise<any>;
+}
+export default NFECartaDeCorrecao;
