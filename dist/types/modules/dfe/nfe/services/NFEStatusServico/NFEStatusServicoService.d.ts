@@ -9,4 +9,3 @@ declare class NFEStatusServicoService extends BaseNFE implements NFEStatusServic
     protected gerarXml(): string;
 }
 export default NFEStatusServicoService;
-//# sourceMappingURL=NFEStatusServicoService.d.ts.map

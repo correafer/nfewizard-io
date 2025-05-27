@@ -37,4 +37,3 @@ export interface NFeWizardImpl {
     }>;
     NFE_EnviaEmail(mailParams: EmailParams): void;
 }
-//# sourceMappingURL=NFeWizardImpl.d.ts.map

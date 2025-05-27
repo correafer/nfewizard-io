@@ -7,4 +7,3 @@ export interface NFEDistribuicaoDFeServiceImpl {
         filesList: string[];
     }>;
 }
-//# sourceMappingURL=NFEDistribuicaoDFeServiceImpl.d.ts.map

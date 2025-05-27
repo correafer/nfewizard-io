@@ -5,4 +5,3 @@ declare class NFERecepcaoEvento implements NFEDistribuicaoDFeServiceImpl {
     Exec(data?: any): Promise<any>;
 }
 export default NFERecepcaoEvento;
-//# sourceMappingURL=NFEDistribuicaoDFe.d.ts.map

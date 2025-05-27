@@ -8,4 +8,3 @@ declare class NFECancelamentoService extends NFERecepcaoEventoService {
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
 }
 export default NFECancelamentoService;
-//# sourceMappingURL=NFECancelamentoService.d.ts.map

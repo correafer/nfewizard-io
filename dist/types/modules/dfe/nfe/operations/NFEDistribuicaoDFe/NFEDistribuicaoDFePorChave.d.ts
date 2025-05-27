@@ -5,4 +5,3 @@ declare class NFEDistribuicaoDFePorChave implements NFEDistribuicaoDFeServiceImp
     Exec(data?: any): Promise<any>;
 }
 export default NFEDistribuicaoDFePorChave;
-//# sourceMappingURL=NFEDistribuicaoDFePorChave.d.ts.map

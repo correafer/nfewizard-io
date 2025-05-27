@@ -5,4 +5,3 @@ declare class NFEDesconhecimentoDaOperacao implements NFERecepcaoEventoServiceIm
     Exec(data?: any): Promise<any>;
 }
 export default NFEDesconhecimentoDaOperacao;
-//# sourceMappingURL=NFEDesconhecimentoDaOperacao.d.ts.map

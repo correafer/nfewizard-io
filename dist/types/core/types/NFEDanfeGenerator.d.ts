@@ -34,4 +34,3 @@ export type NFEGerarDanfeProps = {
 */
     returnType?: string;
 };
-//# sourceMappingURL=NFEDanfeGenerator.d.ts.map

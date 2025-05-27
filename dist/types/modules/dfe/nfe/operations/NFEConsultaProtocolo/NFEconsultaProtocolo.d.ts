@@ -5,4 +5,3 @@ declare class NFEConsultaProtocolo implements NFEconsultaProtocoloServiceImpl {
     Exec(data?: any): Promise<any>;
 }
 export default NFEConsultaProtocolo;
-//# sourceMappingURL=NFEconsultaProtocolo.d.ts.map

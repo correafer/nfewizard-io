@@ -9,4 +9,3 @@ declare class NFEconsultaProtocoloService extends BaseNFE implements NFEconsulta
     protected gerarXml(chave: string): string;
 }
 export default NFEconsultaProtocoloService;
-//# sourceMappingURL=NFEconsultaProtocoloService.d.ts.map

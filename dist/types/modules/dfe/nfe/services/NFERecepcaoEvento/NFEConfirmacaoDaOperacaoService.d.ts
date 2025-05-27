@@ -8,4 +8,3 @@ declare class NFEConfirmacaoDaOperacaoService extends NFERecepcaoEventoService {
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
 }
 export default NFEConfirmacaoDaOperacaoService;
-//# sourceMappingURL=NFEConfirmacaoDaOperacaoService.d.ts.map

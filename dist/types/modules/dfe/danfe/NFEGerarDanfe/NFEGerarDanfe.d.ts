@@ -45,4 +45,3 @@ declare class NFEGerarDanfe {
     } | Buffer | string>;
 }
 export default NFEGerarDanfe;
-//# sourceMappingURL=NFEGerarDanfe.d.ts.map

@@ -9,4 +9,3 @@ export interface NFEAutorizacaoServiceImpl {
         }[];
     }>;
 }
-//# sourceMappingURL=NFEAutorizacaoServiceImpl.d.ts.map
