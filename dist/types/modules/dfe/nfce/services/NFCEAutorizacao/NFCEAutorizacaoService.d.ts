@@ -1,10 +1,10 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
-import Environment from '../../../../../../modules/environment/Environment.js';
-import Utility from '../../../../../../core/utils/Utility.js';
-import XmlBuilder from '../../../../../../adapters/XmlBuilder.js';
-import { GenericObject, LayoutNFe, NFe, ProtNFe } from '../../../../../../core/types/index';
-import BaseNFE from '../../../../../../modules/dfe/base/BaseNFe.js';
-import { GerarConsultaImpl, NFCEAutorizacaoServiceImpl, SaveFilesImpl } from '../../../../../../core/interfaces/index';
+import Environment from '@Modules/environment/Environment.js';
+import Utility from '@Utils/Utility.js';
+import XmlBuilder from '@Adapters/XmlBuilder.js';
+import { GenericObject, LayoutNFe, NFe, ProtNFe } from '@Types';
+import BaseNFE from '@Modules/dfe/base/BaseNFe.js';
+import { GerarConsultaImpl, NFCEAutorizacaoServiceImpl, SaveFilesImpl } from '@Interfaces';
 declare class NFCEAutorizacaoService extends BaseNFE implements NFCEAutorizacaoServiceImpl {
     xmlNFe: string[];
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
@@ -31,3 +31,4 @@ declare class NFCEAutorizacaoService extends BaseNFE implements NFCEAutorizacaoS
     }>;
 }
 export default NFCEAutorizacaoService;
+//# sourceMappingURL=NFCEAutorizacaoService.d.ts.map

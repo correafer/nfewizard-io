@@ -573,3 +573,4 @@ export interface DesconhecimentoDaOperacao {
     evento: EventoDesconhecimentoDaOperacao[];
 }
 export {};
+//# sourceMappingURL=NFERecepcaoEvento.d.ts.map

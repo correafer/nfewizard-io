@@ -1,6 +1,6 @@
 import { DetProd, NFEGerarDanfeProps, Ide, Dest, Emit, Total, Transp, InfAdic, ProtNFe } from 'src/core/types';
 import PDFDocument from 'pdfkit';
-import ValidaCPFCNPJ from '../../../../../core/utils/ValidaCPFCNPJ';
+import ValidaCPFCNPJ from '@Core/utils/ValidaCPFCNPJ';
 declare class NFEGerarDanfe {
     data: NFEGerarDanfeProps['data'];
     chave: string;
@@ -45,3 +45,4 @@ declare class NFEGerarDanfe {
     } | Buffer | string>;
 }
 export default NFEGerarDanfe;
+//# sourceMappingURL=NFEGerarDanfe.d.ts.map

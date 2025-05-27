@@ -1,4 +1,4 @@
-import { ProtNFe } from '../../../core/types/index';
+import { ProtNFe } from '@Types';
 export interface NFERetornoAutorizacaoServiceImpl {
     getXmlRetorno({ tipoEmissao, nRec, protNFe, xmlNFe }: {
         tipoEmissao: number;
@@ -11,3 +11,4 @@ export interface NFERetornoAutorizacaoServiceImpl {
         data: string[];
     }>;
 }
+//# sourceMappingURL=NFERetornoAutorizacaoServiceImpl.d.ts.map

@@ -9,3 +9,4 @@ export type CertificateLoadReturn = {
     cert_key: string;
     agent: https.Agent;
 };
+//# sourceMappingURL=LoadCertificate.d.ts.map

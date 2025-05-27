@@ -1,4 +1,4 @@
-import Environment from '../../modules/environment/Environment.js';
+import Environment from '@Modules/environment/Environment.js';
 export interface NamespacesProps {
     [key: string]: string;
 }
@@ -29,3 +29,4 @@ declare class XmlBuilder {
     buildSoapEnvelope(xml: string, soapMethod: string, soapVersion?: string, rootTagObj?: any): string;
 }
 export default XmlBuilder;
+//# sourceMappingURL=XmlBuilder.d.ts.map

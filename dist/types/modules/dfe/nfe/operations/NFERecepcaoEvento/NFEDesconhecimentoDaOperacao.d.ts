@@ -1,7 +1,8 @@
-import { NFERecepcaoEventoServiceImpl } from '../../../../../../core/interfaces/index';
+import { NFERecepcaoEventoServiceImpl } from '@Interfaces';
 declare class NFEDesconhecimentoDaOperacao implements NFERecepcaoEventoServiceImpl {
     nfeDesconhecimentoDaOperacaoServiceService: NFERecepcaoEventoServiceImpl;
     constructor(nfeDesconhecimentoDaOperacaoServiceService: NFERecepcaoEventoServiceImpl);
     Exec(data?: any): Promise<any>;
 }
 export default NFEDesconhecimentoDaOperacao;
+//# sourceMappingURL=NFEDesconhecimentoDaOperacao.d.ts.map

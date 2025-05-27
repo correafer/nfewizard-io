@@ -10,7 +10,7 @@
     * - Author          :
     * - Modification    :
 **/
-import Environment from '../../../modules/environment/Environment.js';
+import Environment from '@Modules/environment/Environment.js';
 import { NFeWizardProps, GenericObject, SaveXMLProps, SaveJSONProps, ProtNFe } from 'src/core/types';
 import XmlParser from './XmlParser';
 declare class Utility {
@@ -84,3 +84,4 @@ declare class Utility {
     salvaRetorno(xmlRetorno: string, responseInJson: GenericObject | undefined, metodo: string, name?: string): void;
 }
 export default Utility;
+//# sourceMappingURL=Utility.d.ts.map

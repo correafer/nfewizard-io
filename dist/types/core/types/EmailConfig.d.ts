@@ -63,3 +63,4 @@ export type EmailParams = {
     attachments?: Attachment[];
 };
 export {};
+//# sourceMappingURL=EmailConfig.d.ts.map

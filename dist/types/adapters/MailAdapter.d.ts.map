@@ -1,0 +1,1 @@
+{"version":3,"file":"MailAdapter.d.ts","sourceRoot":"","sources":["../../../src/adapters/MailAdapter.ts"],"names":[],"mappings":"AAgBA,OAAO,WAAW,MAAM,qCAAqC,CAAC;AAC9D,OAAO,EAAe,WAAW,EAAE,MAAM,gBAAgB,CAAC;AAG1D,cAAM,cAAc;IAChB,OAAO,CAAC,WAAW,CAAc;gBACrB,WAAW,EAAE,WAAW;IAIpC,OAAO,CAAC,iBAAiB;IAiBzB,OAAO,CAAC,SAAS;IAoBjB,SAAS,CAAC,UAAU,EAAE,WAAW;CAsBpC;AAED,eAAe,cAAc,CAAC"}

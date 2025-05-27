@@ -1,5 +1,5 @@
 import { NFeWizardProps, EventoNFe, ConsultaNFe, NFe, InutilizacaoData, NFEGerarDanfeProps, DFePorChaveNFe, DFePorUltimoNSU, DFePorNSU, Cancelamento, CienciaDaOperacao, ConfirmacaoDaOperacao, OperacaoNaoRealizada, CartaDeCorrecao, DesconhecimentoDaOperacao, EPEC, EmailParams } from 'src/core/types';
-import { NFeWizardImpl } from '../../core/interfaces/index';
+import { NFeWizardImpl } from '@Interfaces';
 export default class NFeWizard implements NFeWizardImpl {
     private nfeWizardService;
     constructor();
@@ -65,3 +65,4 @@ export default class NFeWizard implements NFeWizardImpl {
      */
     NFE_EnviaEmail(mailParams: EmailParams): void;
 }
+//# sourceMappingURL=NFeWizard.d.ts.map

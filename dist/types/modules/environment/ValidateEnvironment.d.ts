@@ -1,4 +1,4 @@
-import { NFeWizardProps } from '../../../core/types/index';
+import { NFeWizardProps } from '@Types';
 declare class ValidateEnvironment {
     checkRequiredSettings(config: NFeWizardProps): {
         missingConfigurations: any;
@@ -7,3 +7,4 @@ declare class ValidateEnvironment {
     };
 }
 export default ValidateEnvironment;
+//# sourceMappingURL=ValidateEnvironment.d.ts.map
