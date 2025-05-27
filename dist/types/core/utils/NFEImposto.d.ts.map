@@ -1,1 +1,0 @@
-{"version":3,"file":"NFEImposto.d.ts","sourceRoot":"","sources":["../../../../src/core/utils/NFEImposto.ts"],"names":[],"mappings":"AAgBA,OAAO,EAAE,MAAM,EAAE,IAAI,EAAE,GAAG,EAAE,WAAW,EAAE,SAAS,EAAE,QAAQ,EAAE,MAAM,gBAAgB,CAAC;AA4GrF,eAAO,MAAM,WAAW,WAAY,WAAW,WAsC9C,CAAA;AAED,eAAO,MAAM,QAAQ,QAAS,QAAQ,KAAG,GA6BxC,CAAA;AAED,eAAO,MAAM,SAAS,SAAU,SAAS,KAAG,IAgE3C,CAAA"}
