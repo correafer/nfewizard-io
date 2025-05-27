@@ -1,10 +1,10 @@
-import Environment from '@Modules/environment/Environment.js';
-import Utility from '@Utils/Utility.js';
-import XmlBuilder from '@Adapters/XmlBuilder.js';
-import BaseNFE from '@Modules/dfe/base/BaseNFe.js';
-import { ProtNFe } from '@Types';
+import Environment from '../../../../../../modules/environment/Environment.js';
+import Utility from '../../../../../../core/utils/Utility.js';
+import XmlBuilder from '../../../../../../adapters/XmlBuilder.js';
+import BaseNFE from '../../../../../../modules/dfe/base/BaseNFe.js';
+import { ProtNFe } from '../../../../../../core/types/index';
 import { AxiosInstance } from 'axios';
-import { GerarConsultaImpl, NFCERetornoAutorizacaoServiceImpl, SaveFilesImpl } from '@Interfaces';
+import { GerarConsultaImpl, NFCERetornoAutorizacaoServiceImpl, SaveFilesImpl } from '../../../../../../core/interfaces/index';
 declare class NFCERetornoAutorizacaoService extends BaseNFE implements NFCERetornoAutorizacaoServiceImpl {
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
     protected gerarXml(data: string): string;

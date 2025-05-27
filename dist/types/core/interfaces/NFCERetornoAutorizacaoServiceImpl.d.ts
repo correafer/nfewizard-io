@@ -1,4 +1,4 @@
-import { ProtNFe } from '@Types';
+import { ProtNFe } from '../../../core/types/index';
 export interface NFCERetornoAutorizacaoServiceImpl {
     getXmlRetorno({ tipoEmissao, nRec, protNFe, xmlNFe }: {
         tipoEmissao: number;

@@ -1,4 +1,4 @@
-import { NFERecepcaoEventoServiceImpl } from '@Interfaces/NFERecepcaoEventoServiceImpl.js';
+import { NFERecepcaoEventoServiceImpl } from '../../../../../../core/interfaces/NFERecepcaoEventoServiceImpl.js';
 declare class NFECartaDeCorrecao implements NFERecepcaoEventoServiceImpl {
     nfeCartaDeCorrecaoServiceService: NFERecepcaoEventoServiceImpl;
     constructor(nfeCartaDeCorrecaoServiceService: NFERecepcaoEventoServiceImpl);

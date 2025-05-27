@@ -1,4 +1,4 @@
-import { NFEDistribuicaoDFeServiceImpl } from '@Interfaces';
+import { NFEDistribuicaoDFeServiceImpl } from '../../../../../../core/interfaces/index';
 declare class NFEDistribuicaoDFePorChave implements NFEDistribuicaoDFeServiceImpl {
     nfeDistribuicaoDFePorChaveService: NFEDistribuicaoDFeServiceImpl;
     constructor(nfeDistribuicaoDFePorChaveService: NFEDistribuicaoDFeServiceImpl);

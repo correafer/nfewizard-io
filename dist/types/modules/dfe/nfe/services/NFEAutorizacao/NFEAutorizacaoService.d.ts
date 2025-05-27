@@ -1,10 +1,10 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
-import Environment from '@Modules/environment/Environment.js';
-import Utility from '@Utils/Utility.js';
-import XmlBuilder from '@Adapters/XmlBuilder.js';
-import { GenericObject, LayoutNFe, NFe, ProtNFe } from '@Types';
-import BaseNFE from '@Modules/dfe/base/BaseNFe.js';
-import { GerarConsultaImpl, NFEAutorizacaoServiceImpl, SaveFilesImpl } from '@Interfaces';
+import Environment from '../../../../../../modules/environment/Environment.js';
+import Utility from '../../../../../../core/utils/Utility.js';
+import XmlBuilder from '../../../../../../adapters/XmlBuilder.js';
+import { GenericObject, LayoutNFe, NFe, ProtNFe } from '../../../../../../core/types/index';
+import BaseNFE from '../../../../../../modules/dfe/base/BaseNFe.js';
+import { GerarConsultaImpl, NFEAutorizacaoServiceImpl, SaveFilesImpl } from '../../../../../../core/interfaces/index';
 declare class NFEAutorizacaoService extends BaseNFE implements NFEAutorizacaoServiceImpl {
     xmlNFe: string[];
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);

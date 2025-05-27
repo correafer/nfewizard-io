@@ -1,4 +1,4 @@
-import { LayoutNFe, NFe, ProtNFe, GenericObject } from '@Types';
+import { LayoutNFe, NFe, ProtNFe, GenericObject } from '../../../core/types/index';
 export interface NFCEAutorizacaoServiceImpl {
     Exec(data: NFe): Promise<{
         success: boolean;

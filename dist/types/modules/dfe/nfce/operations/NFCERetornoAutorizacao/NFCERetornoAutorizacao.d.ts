@@ -1,5 +1,5 @@
-import { NFCERetornoAutorizacaoServiceImpl } from '@Interfaces';
-import { ProtNFe } from '@Types/NFEAutorizacao';
+import { NFCERetornoAutorizacaoServiceImpl } from '../../../../../../core/interfaces/index';
+import { ProtNFe } from '../../../../../../core/types/NFEAutorizacao';
 declare class NFCERetornoAutorizacao implements NFCERetornoAutorizacaoServiceImpl {
     nfceAutorizacaoRetornoService: NFCERetornoAutorizacaoServiceImpl;
     constructor(nfceAutorizacaoRetornoService: NFCERetornoAutorizacaoServiceImpl);

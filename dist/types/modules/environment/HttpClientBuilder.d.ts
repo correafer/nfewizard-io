@@ -1,6 +1,6 @@
-import { NFeWizardProps } from '@Types';
+import { NFeWizardProps } from '../../../core/types/index';
 import https from 'https';
-import { HttpClient } from '@Interfaces';
+import { HttpClient } from '../../../core/interfaces/index';
 declare class HttpClientBuilder<T> {
     private config;
     private agent;

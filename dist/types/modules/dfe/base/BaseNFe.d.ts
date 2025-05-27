@@ -1,8 +1,8 @@
-import Environment from '@Modules/environment/Environment.js';
-import XmlBuilder from '@Adapters/XmlBuilder.js';
+import Environment from '../../../../modules/environment/Environment.js';
+import XmlBuilder from '../../../../adapters/XmlBuilder.js';
 import Utility from '../../../core/utils/Utility.js';
 import { AxiosInstance } from 'axios';
-import { SaveFilesImpl, GerarConsultaImpl } from '@Interfaces';
+import { SaveFilesImpl, GerarConsultaImpl } from '../../../../core/interfaces/index';
 declare abstract class BaseNFE {
     environment: Environment;
     utility: Utility;

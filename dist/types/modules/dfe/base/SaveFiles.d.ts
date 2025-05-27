@@ -1,7 +1,7 @@
-import Utility from '@Core/utils/Utility';
-import { SaveFilesImpl } from '@Interfaces';
-import Environment from '@Modules/environment/Environment.js';
-import { GenericObject } from '@Types';
+import Utility from '../../../../core/utils/Utility';
+import { SaveFilesImpl } from '../../../../core/interfaces/index';
+import Environment from '../../../../modules/environment/Environment.js';
+import { GenericObject } from '../../../../core/types/index';
 import { AxiosResponse } from 'axios';
 declare class SaveFiles implements SaveFilesImpl {
     utility: Utility;

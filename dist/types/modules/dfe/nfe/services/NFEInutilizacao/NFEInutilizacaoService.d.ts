@@ -1,10 +1,10 @@
-import Environment from '@Modules/environment/Environment.js';
-import Utility from '@Utils/Utility.js';
-import XmlBuilder from '@Adapters/XmlBuilder.js';
-import { InutilizacaoData } from '@Types';
-import BaseNFE from '@Modules/dfe/base/BaseNFe.js';
+import Environment from '../../../../../../modules/environment/Environment.js';
+import Utility from '../../../../../../core/utils/Utility.js';
+import XmlBuilder from '../../../../../../adapters/XmlBuilder.js';
+import { InutilizacaoData } from '../../../../../../core/types/index';
+import BaseNFE from '../../../../../../modules/dfe/base/BaseNFe.js';
 import { AxiosInstance } from 'axios';
-import { GerarConsultaImpl, NFEInutilizacaoServiceImpl, SaveFilesImpl } from '@Interfaces';
+import { GerarConsultaImpl, NFEInutilizacaoServiceImpl, SaveFilesImpl } from '../../../../../../core/interfaces/index';
 declare class NFEInutilizacaoService extends BaseNFE implements NFEInutilizacaoServiceImpl {
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
     protected gerarXml(chave: InutilizacaoData): string;

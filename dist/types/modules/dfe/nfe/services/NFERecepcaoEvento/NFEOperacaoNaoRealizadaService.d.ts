@@ -1,9 +1,9 @@
-import Environment from '@Modules/environment/Environment.js';
-import Utility from '@Utils/Utility.js';
-import XmlBuilder from '@Adapters/XmlBuilder.js';
+import Environment from '../../../../../../modules/environment/Environment.js';
+import Utility from '../../../../../../core/utils/Utility.js';
+import XmlBuilder from '../../../../../../adapters/XmlBuilder.js';
 import { AxiosInstance } from 'axios';
 import NFERecepcaoEventoService from './NFERecepcaoEventoService';
-import { SaveFilesImpl, GerarConsultaImpl } from '@Interfaces';
+import { SaveFilesImpl, GerarConsultaImpl } from '../../../../../../core/interfaces/index';
 declare class NFEOperacaoNaoRealizadaService extends NFERecepcaoEventoService {
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
 }

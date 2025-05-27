@@ -1,4 +1,4 @@
-import { Cancelamento, CartaDeCorrecao, CienciaDaOperacao, ConfirmacaoDaOperacao, ConsultaNFe, DesconhecimentoDaOperacao, DFePorChaveNFe, DFePorNSU, DFePorUltimoNSU, EmailParams, EPEC, EventoNFe, GenericObject, InutilizacaoData, LayoutNFe, NFe, NFEGerarDanfeProps, NFeWizardProps, OperacaoNaoRealizada, ProtNFe } from '@Types';
+import { Cancelamento, CartaDeCorrecao, CienciaDaOperacao, ConfirmacaoDaOperacao, ConsultaNFe, DesconhecimentoDaOperacao, DFePorChaveNFe, DFePorNSU, DFePorUltimoNSU, EmailParams, EPEC, EventoNFe, GenericObject, InutilizacaoData, LayoutNFe, NFe, NFEGerarDanfeProps, NFeWizardProps, OperacaoNaoRealizada, ProtNFe } from '../../../core/types/index';
 export interface NFeWizardImpl {
     NFE_LoadEnvironment({ config }: {
         config: NFeWizardProps;

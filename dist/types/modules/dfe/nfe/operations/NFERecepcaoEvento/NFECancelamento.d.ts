@@ -1,4 +1,4 @@
-import { NFERecepcaoEventoServiceImpl } from '@Interfaces';
+import { NFERecepcaoEventoServiceImpl } from '../../../../../../core/interfaces/index';
 declare class NFECancelamento implements NFERecepcaoEventoServiceImpl {
     nfeCancelamentoServiceService: NFERecepcaoEventoServiceImpl;
     constructor(nfeCancelamentoServiceService: NFERecepcaoEventoServiceImpl);

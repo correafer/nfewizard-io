@@ -1,4 +1,4 @@
-import { NFEStatusServicoServiceImpl } from '@Interfaces';
+import { NFEStatusServicoServiceImpl } from '../../../../../../core/interfaces/index';
 declare class NFEStatusServico implements NFEStatusServicoServiceImpl {
     nfeStatusServicoService: NFEStatusServicoServiceImpl;
     constructor(nfeStatusServicoService: NFEStatusServicoServiceImpl);

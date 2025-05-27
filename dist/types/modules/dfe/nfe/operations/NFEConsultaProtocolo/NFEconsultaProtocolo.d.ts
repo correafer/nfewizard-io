@@ -1,4 +1,4 @@
-import { NFEconsultaProtocoloServiceImpl } from '@Interfaces';
+import { NFEconsultaProtocoloServiceImpl } from '../../../../../../core/interfaces/index';
 declare class NFEConsultaProtocolo implements NFEconsultaProtocoloServiceImpl {
     nfeConsultaProtocoloService: NFEconsultaProtocoloServiceImpl;
     constructor(nfeConsultaProtocoloService: NFEconsultaProtocoloServiceImpl);

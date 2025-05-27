@@ -1,7 +1,7 @@
-import XmlBuilder from '@Adapters/XmlBuilder';
-import Utility from '@Core/utils/Utility';
-import { GerarConsultaImpl } from '@Interfaces';
-import Environment from '@Modules/environment/Environment.js';
+import XmlBuilder from '../../../../adapters/XmlBuilder';
+import Utility from '../../../../core/utils/Utility';
+import { GerarConsultaImpl } from '../../../../core/interfaces/index';
+import Environment from '../../../../modules/environment/Environment.js';
 declare class GerarConsulta implements GerarConsultaImpl {
     utility: Utility;
     environment: Environment;

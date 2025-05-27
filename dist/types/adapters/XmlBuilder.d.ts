@@ -1,4 +1,4 @@
-import Environment from '@Modules/environment/Environment.js';
+import Environment from '../../modules/environment/Environment.js';
 export interface NamespacesProps {
     [key: string]: string;
 }

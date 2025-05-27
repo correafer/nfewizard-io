@@ -1,5 +1,5 @@
-import { NFeWizardServiceImpl } from '@Interfaces';
-import { Cancelamento, CartaDeCorrecao, CienciaDaOperacao, ConfirmacaoDaOperacao, ConsultaNFe, DesconhecimentoDaOperacao, DFePorChaveNFe, DFePorNSU, DFePorUltimoNSU, EmailParams, EPEC, EventoNFe, InutilizacaoData, NFe, NFEGerarDanfeProps, NFeWizardProps, OperacaoNaoRealizada } from '@Types';
+import { NFeWizardServiceImpl } from '../../../../../../core/interfaces/index';
+import { Cancelamento, CartaDeCorrecao, CienciaDaOperacao, ConfirmacaoDaOperacao, ConsultaNFe, DesconhecimentoDaOperacao, DFePorChaveNFe, DFePorNSU, DFePorUltimoNSU, EmailParams, EPEC, EventoNFe, InutilizacaoData, NFe, NFEGerarDanfeProps, NFeWizardProps, OperacaoNaoRealizada } from '../../../../../../core/types/index';
 declare class NFeWizardService implements NFeWizardServiceImpl {
     private config;
     private environment;

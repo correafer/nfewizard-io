@@ -1,4 +1,4 @@
-import { NFEInutilizacaoServiceImpl } from '@Interfaces';
+import { NFEInutilizacaoServiceImpl } from '../../../../../../core/interfaces/index';
 declare class NFEInutilizacao implements NFEInutilizacaoServiceImpl {
     nfeInutilizacaoService: NFEInutilizacaoServiceImpl;
     constructor(nfeInutilizacaoService: NFEInutilizacaoServiceImpl);

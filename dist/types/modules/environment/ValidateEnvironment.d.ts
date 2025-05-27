@@ -1,4 +1,4 @@
-import { NFeWizardProps } from '@Types';
+import { NFeWizardProps } from '../../../core/types/index';
 declare class ValidateEnvironment {
     checkRequiredSettings(config: NFeWizardProps): {
         missingConfigurations: any;

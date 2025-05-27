@@ -1,5 +1,5 @@
 import { NFeWizardProps, EventoNFe, ConsultaNFe, NFe, InutilizacaoData, NFEGerarDanfeProps, DFePorChaveNFe, DFePorUltimoNSU, DFePorNSU, Cancelamento, CienciaDaOperacao, ConfirmacaoDaOperacao, OperacaoNaoRealizada, CartaDeCorrecao, DesconhecimentoDaOperacao, EPEC, EmailParams } from 'src/core/types';
-import { NFeWizardImpl } from '@Interfaces';
+import { NFeWizardImpl } from '../../core/interfaces/index';
 export default class NFeWizard implements NFeWizardImpl {
     private nfeWizardService;
     constructor();

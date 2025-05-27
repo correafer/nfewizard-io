@@ -1,4 +1,4 @@
-import { NFCEAutorizacaoServiceImpl } from '@Interfaces';
+import { NFCEAutorizacaoServiceImpl } from '../../../../../../core/interfaces/index';
 declare class NFCEAutorizacao {
     nfceAutorizacaoService: NFCEAutorizacaoServiceImpl;
     constructor(nfceAutorizacaoService: NFCEAutorizacaoServiceImpl);

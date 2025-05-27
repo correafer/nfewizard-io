@@ -1,4 +1,4 @@
-import { CertificateLoadReturn, NFeWizardProps } from '@Types';
+import { CertificateLoadReturn, NFeWizardProps } from '../../../core/types/index';
 declare class LoadCertificate {
     private config;
     private certificate;
