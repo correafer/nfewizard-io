@@ -4428,4 +4428,3 @@ export type NFeDanfe = {
     NFe: LayoutNFe[] | LayoutNFe;
     protNFe?: ProtNFe;
 } & Record<string, any>;
-//# sourceMappingURL=NFEAutorizacao.d.ts.map

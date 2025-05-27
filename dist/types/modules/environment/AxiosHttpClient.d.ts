@@ -4,4 +4,3 @@ declare class AxiosHttpClient implements HttpClient<AxiosInstance> {
     create(config: HttpClientConfig): AxiosInstance;
 }
 export default AxiosHttpClient;
-//# sourceMappingURL=AxiosHttpClient.d.ts.map

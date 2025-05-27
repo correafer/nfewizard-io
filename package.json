@@ -26,7 +26,7 @@
     "clean": "rm -rf dist",
     "build": "node build.mjs",
     "build:rp": "npm run clean && rollup -c",
-    "build:cjs": "tsc -p tsconfig.cjs.json && npm run fix-cjs-paths",
+    "build:cjs": "tsc -p tsconfig.cjs.json && tsc-alias -p tsconfig.cjs.json && npm run fix-cjs-paths",
     "fix-cjs-paths": "node ./scripts/post-build-cjs.cjs",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs-esm": "yarn build:cjs && yarn build:esm"

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const DistribuicaoHandler_js_1 = __importDefault(require("./util/DistribuicaoHandler.js"));
-const BaseNFe_js_1 = __importDefault(require("@Modules/dfe/base/BaseNFe.js"));
+const BaseNFe_js_1 = __importDefault(require("../../../../dfe/base/BaseNFe.js"));
 class NFEDistribuicaoDFeService extends BaseNFe_js_1.default {
     constructor(environment, utility, xmlBuilder, axios, saveFiles, gerarConsulta) {
         super(environment, utility, xmlBuilder, 'NFeDistribuicaoDFe', axios, saveFiles, gerarConsulta);

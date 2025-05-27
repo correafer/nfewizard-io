@@ -5,4 +5,3 @@ declare class NFECancelamento implements NFERecepcaoEventoServiceImpl {
     Exec(data?: any): Promise<any>;
 }
 export default NFECancelamento;
-//# sourceMappingURL=NFECancelamento.d.ts.map

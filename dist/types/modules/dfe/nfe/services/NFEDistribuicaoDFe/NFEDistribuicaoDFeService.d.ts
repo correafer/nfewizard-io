@@ -16,4 +16,3 @@ declare class NFEDistribuicaoDFeService extends BaseNFE {
     }>;
 }
 export default NFEDistribuicaoDFeService;
-//# sourceMappingURL=NFEDistribuicaoDFeService.d.ts.map

@@ -5,4 +5,3 @@ declare class NFEAutorizacao {
     Exec(data?: any): Promise<any>;
 }
 export default NFEAutorizacao;
-//# sourceMappingURL=NFEAutorizacao.d.ts.map

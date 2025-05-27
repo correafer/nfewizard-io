@@ -23,7 +23,7 @@ const bwip_js_1 = __importDefault(require("bwip-js"));
 const fs_1 = __importDefault(require("fs"));
 const date_fns_1 = require("date-fns");
 const pdfkit_1 = __importDefault(require("pdfkit"));
-const ValidaCPFCNPJ_1 = __importDefault(require("@Core/utils/ValidaCPFCNPJ"));
+const ValidaCPFCNPJ_1 = __importDefault(require("../../../../core/utils/ValidaCPFCNPJ.cjs"));
 const axios_1 = __importDefault(require("axios"));
 class NFEGerarDanfe {
     constructor(props) {

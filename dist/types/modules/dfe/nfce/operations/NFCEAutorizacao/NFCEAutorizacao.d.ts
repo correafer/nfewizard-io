@@ -5,4 +5,3 @@ declare class NFCEAutorizacao {
     Exec(data?: any): Promise<any>;
 }
 export default NFCEAutorizacao;
-//# sourceMappingURL=NFCEAutorizacao.d.ts.map

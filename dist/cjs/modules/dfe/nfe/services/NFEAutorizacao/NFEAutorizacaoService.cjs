@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const NFERetornoAutorizacao_js_1 = __importDefault(require("../../operations/NFERetornoAutorizacao/NFERetornoAutorizacao.js"));
 const XmlParser_js_1 = __importDefault(require("../../../../../core/utils/XmlParser.js"));
 const ValidaCPFCNPJ_js_1 = __importDefault(require("../../../../../core/utils/ValidaCPFCNPJ.js"));
-const BaseNFe_js_1 = __importDefault(require("@Modules/dfe/base/BaseNFe.js"));
+const BaseNFe_js_1 = __importDefault(require("../../../../dfe/base/BaseNFe.js"));
 const date_fns_1 = require("date-fns");
-const NFEImposto_js_1 = require("@Utils/NFEImposto.js");
+const NFEImposto_js_1 = require("../../../../../core/utils/NFEImposto.js");
 const NFERetornoAutorizacaoService_js_1 = __importDefault(require("../NFERetornoAutorizacao/NFERetornoAutorizacaoService.js"));
 class NFEAutorizacaoService extends BaseNFe_js_1.default {
     constructor(environment, utility, xmlBuilder, axios, saveFiles, gerarConsulta) {

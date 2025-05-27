@@ -8,4 +8,3 @@ declare class NFEDistribuicaoDFePorNSUService extends NFEDistribuicaoDFeService 
     constructor(environment: Environment, utility: Utility, xmlBuilder: XmlBuilder, axios: AxiosInstance, saveFiles: SaveFilesImpl, gerarConsulta: GerarConsultaImpl);
 }
 export default NFEDistribuicaoDFePorNSUService;
-//# sourceMappingURL=NFEDistribuicaoDFePorNSU.d.ts.map

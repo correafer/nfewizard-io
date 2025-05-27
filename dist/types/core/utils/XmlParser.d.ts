@@ -16,4 +16,3 @@ export default class XmlParser {
     getInutilizacaoRetornoEventBody(jsonData: any): any;
     convertXmlToJson(xml: string, metodo: string, nsu?: string): GenericObject;
 }
-//# sourceMappingURL=XmlParser.d.ts.map

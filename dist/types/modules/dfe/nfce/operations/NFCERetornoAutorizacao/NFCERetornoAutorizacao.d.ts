@@ -15,4 +15,3 @@ declare class NFCERetornoAutorizacao implements NFCERetornoAutorizacaoServiceImp
     }>;
 }
 export default NFCERetornoAutorizacao;
-//# sourceMappingURL=NFCERetornoAutorizacao.d.ts.map

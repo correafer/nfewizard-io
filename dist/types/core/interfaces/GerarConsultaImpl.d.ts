@@ -7,4 +7,3 @@ export interface GerarConsultaImpl {
         action: string;
     }>;
 }
-//# sourceMappingURL=GerarConsultaImpl.d.ts.map

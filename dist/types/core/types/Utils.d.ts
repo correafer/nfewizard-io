@@ -27,4 +27,3 @@ export interface SaveJSONProps {
     metodo: string;
     path: string | undefined;
 }
-//# sourceMappingURL=Utils.d.ts.map

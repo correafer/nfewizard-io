@@ -21,7 +21,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const pako_1 = __importDefault(require("pako"));
 const xml2js_1 = __importDefault(require("xml2js"));
-const XmlParser_js_1 = __importDefault(require("@Utils/XmlParser.js"));
+const XmlParser_js_1 = __importDefault(require("../../../../../../core/utils/XmlParser.js"));
 class DistribuicaoHandler {
     constructor(environment, utility, metodo) {
         this.utility = utility;

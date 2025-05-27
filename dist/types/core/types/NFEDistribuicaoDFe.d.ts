@@ -68,4 +68,3 @@ export interface DFePorChaveNFe {
         chNFe: string;
     };
 }
-//# sourceMappingURL=NFEDistribuicaoDFe.d.ts.map

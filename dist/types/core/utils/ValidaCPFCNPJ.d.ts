@@ -29,4 +29,3 @@ declare class ValidaCPFCNPJ {
     mascaraCnpjCpf(cpfcnpj: string): string;
 }
 export default ValidaCPFCNPJ;
-//# sourceMappingURL=ValidaCPFCNPJ.d.ts.map

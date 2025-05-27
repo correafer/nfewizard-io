@@ -7,4 +7,3 @@ declare class ValidateEnvironment {
     };
 }
 export default ValidateEnvironment;
-//# sourceMappingURL=ValidateEnvironment.d.ts.map

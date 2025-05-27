@@ -19,8 +19,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * You should have received a copy of the GNU General Public License
  * along with NFeWizard-io. If not, see <https://www.gnu.org/licenses/>.
  */
-const getCodIBGE_js_1 = require("@Utils/getCodIBGE.js");
-const BaseNFe_js_1 = __importDefault(require("@Modules/dfe/base/BaseNFe.js"));
+const getCodIBGE_js_1 = require("../../../../../core/utils/getCodIBGE.js");
+const BaseNFe_js_1 = __importDefault(require("../../../../dfe/base/BaseNFe.js"));
 class NFEStatusServicoService extends BaseNFe_js_1.default {
     constructor(environment, utility, xmlBuilder, axios, saveFiles, gerarConsulta) {
         super(environment, utility, xmlBuilder, 'NFEStatusServico', axios, saveFiles, gerarConsulta);

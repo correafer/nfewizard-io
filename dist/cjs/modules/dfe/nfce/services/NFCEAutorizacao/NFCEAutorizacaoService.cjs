@@ -28,11 +28,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const XmlParser_js_1 = __importDefault(require("../../../../../core/utils/XmlParser.js"));
 const ValidaCPFCNPJ_js_1 = __importDefault(require("../../../../../core/utils/ValidaCPFCNPJ.js"));
-const BaseNFe_js_1 = __importDefault(require("@Modules/dfe/base/BaseNFe.js"));
+const BaseNFe_js_1 = __importDefault(require("../../../../dfe/base/BaseNFe.js"));
 const date_fns_1 = require("date-fns");
 const NFCEQRCode_js_1 = require("./util/NFCEQRCode.js");
 const xml2js_1 = __importStar(require("xml2js"));
-const NFEImposto_js_1 = require("@Utils/NFEImposto.js");
+const NFEImposto_js_1 = require("../../../../../core/utils/NFEImposto.js");
 const NFCERetornoAutorizacaoService_js_1 = __importDefault(require("../NFCERetornoAutorizacao/NFCERetornoAutorizacaoService.js"));
 const NFCERetornoAutorizacao_js_1 = __importDefault(require("../../operations/NFCERetornoAutorizacao/NFCERetornoAutorizacao.js"));
 class NFCEAutorizacaoService extends BaseNFe_js_1.default {

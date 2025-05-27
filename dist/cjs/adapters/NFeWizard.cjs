@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const NFeWizardService_1 = __importDefault(require("@Modules/dfe/nfe/services/NFeWizard/NFeWizardService"));
+const NFeWizardService_1 = __importDefault(require("../modules/dfe/nfe/services/NFeWizard/NFeWizardService.cjs"));
 class NFeWizard {
     constructor() {
         this.nfeWizardService = new NFeWizardService_1.default();

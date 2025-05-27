@@ -5,4 +5,3 @@ declare class NFEDistribuicaoDFePorUltNSU implements NFEDistribuicaoDFeServiceIm
     Exec(data?: any): Promise<any>;
 }
 export default NFEDistribuicaoDFePorUltNSU;
-//# sourceMappingURL=NFEDistribuicaoDFePorUltNSU.d.ts.map

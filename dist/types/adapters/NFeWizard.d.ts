@@ -65,4 +65,3 @@ export default class NFeWizard implements NFeWizardImpl {
      */
     NFE_EnviaEmail(mailParams: EmailParams): void;
 }
-//# sourceMappingURL=NFeWizard.d.ts.map

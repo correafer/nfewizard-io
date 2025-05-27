@@ -3,22 +3,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const XmlBuilder_1 = __importDefault(require("@Adapters/XmlBuilder"));
-const Utility_1 = __importDefault(require("@Core/utils/Utility"));
-const GerarConsulta_1 = __importDefault(require("@Modules/dfe/base/GerarConsulta"));
-const SaveFiles_1 = __importDefault(require("@Modules/dfe/base/SaveFiles"));
-const Environment_1 = __importDefault(require("@Modules/environment/Environment"));
-const NFEStatusServicoService_1 = __importDefault(require("@Modules/dfe/nfe/services/NFEStatusServico/NFEStatusServicoService"));
+const XmlBuilder_1 = __importDefault(require("../../../../../adapters/XmlBuilder.cjs"));
+const Utility_1 = __importDefault(require("../../../../../core/utils/Utility.cjs"));
+const GerarConsulta_1 = __importDefault(require("../../../../dfe/base/GerarConsulta.cjs"));
+const SaveFiles_1 = __importDefault(require("../../../../dfe/base/SaveFiles.cjs"));
+const Environment_1 = __importDefault(require("../../../../environment/Environment.cjs"));
+const NFEStatusServicoService_1 = __importDefault(require("../../../../dfe/nfe/services/NFEStatusServico/NFEStatusServicoService.cjs"));
 const NFEconsultaProtocolo_1 = __importDefault(require("../../operations/NFEConsultaProtocolo/NFEconsultaProtocolo.cjs"));
 const NFEEpec_1 = __importDefault(require("../../operations/NFERecepcaoEvento/NFEEpec.cjs"));
 const NFECancelamento_1 = __importDefault(require("../../operations/NFERecepcaoEvento/NFECancelamento.cjs"));
 const NFECienciaDaOperacao_1 = __importDefault(require("../../operations/NFERecepcaoEvento/NFECienciaDaOperacao.cjs"));
 const NFEConfirmacaoDaOperacao_1 = __importDefault(require("../../operations/NFERecepcaoEvento/NFEConfirmacaoDaOperacao.cjs"));
 const NFEOperacaoNaoRealizada_1 = __importDefault(require("../../operations/NFERecepcaoEvento/NFEOperacaoNaoRealizada.cjs"));
-const MailAdapter_1 = __importDefault(require("@Adapters/MailAdapter"));
-const NFCEGerarDanfe_1 = __importDefault(require("@Modules/dfe/danfe/NFCEGerarDanfe/NFCEGerarDanfe"));
-const NFEGerarDanfe_1 = __importDefault(require("@Modules/dfe/danfe/NFEGerarDanfe/NFEGerarDanfe"));
-const NFCEAutorizacao_1 = __importDefault(require("@Modules/dfe/nfce/operations/NFCEAutorizacao/NFCEAutorizacao"));
+const MailAdapter_1 = __importDefault(require("../../../../../adapters/MailAdapter.cjs"));
+const NFCEGerarDanfe_1 = __importDefault(require("../../../../dfe/danfe/NFCEGerarDanfe/NFCEGerarDanfe.cjs"));
+const NFEGerarDanfe_1 = __importDefault(require("../../../../dfe/danfe/NFEGerarDanfe/NFEGerarDanfe.cjs"));
+const NFCEAutorizacao_1 = __importDefault(require("../../../../dfe/nfce/operations/NFCEAutorizacao/NFCEAutorizacao.cjs"));
 const NFEDistribuicaoDFe_1 = __importDefault(require("../../operations/NFEDistribuicaoDFe/NFEDistribuicaoDFe.cjs"));
 const NFEDistribuicaoDFePorChave_1 = __importDefault(require("../../operations/NFEDistribuicaoDFe/NFEDistribuicaoDFePorChave.cjs"));
 const NFEDistribuicaoDFePorNSU_1 = __importDefault(require("../../operations/NFEDistribuicaoDFe/NFEDistribuicaoDFePorNSU.cjs"));
@@ -43,7 +43,7 @@ const NFEDistribuicaoDFePorUltNSU_2 = __importDefault(require("../NFEDistribuica
 const NFEDistribuicaoDFePorNSU_2 = __importDefault(require("../NFEDistribuicaoDFe/NFEDistribuicaoDFePorNSU.cjs"));
 const NFEDistribuicaoDFePorChave_2 = __importDefault(require("../NFEDistribuicaoDFe/NFEDistribuicaoDFePorChave.cjs"));
 const NFEInutilizacaoService_1 = __importDefault(require("../NFEInutilizacao/NFEInutilizacaoService.cjs"));
-const NFCEAutorizacaoService_1 = __importDefault(require("@Modules/dfe/nfce/services/NFCEAutorizacao/NFCEAutorizacaoService"));
+const NFCEAutorizacaoService_1 = __importDefault(require("../../../../dfe/nfce/services/NFCEAutorizacao/NFCEAutorizacaoService.cjs"));
 class NFeWizardService {
     constructor() {
         this.config = {};

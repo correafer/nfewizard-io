@@ -10,4 +10,3 @@ declare class SaveFiles implements SaveFilesImpl {
     salvaArquivos(xmlConsulta: string, responseInJson: GenericObject | undefined, xmlRetorno: AxiosResponse<any, any>, metodo: string, xmlFormated?: string, options?: Record<string, any>): void;
 }
 export default SaveFiles;
-//# sourceMappingURL=SaveFiles.d.ts.map

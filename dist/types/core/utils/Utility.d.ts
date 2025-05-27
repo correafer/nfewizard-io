@@ -84,4 +84,3 @@ declare class Utility {
     salvaRetorno(xmlRetorno: string, responseInJson: GenericObject | undefined, metodo: string, name?: string): void;
 }
 export default Utility;
-//# sourceMappingURL=Utility.d.ts.map

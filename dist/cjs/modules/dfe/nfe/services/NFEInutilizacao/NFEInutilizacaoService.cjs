@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const BaseNFe_js_1 = __importDefault(require("@Modules/dfe/base/BaseNFe.js"));
+const BaseNFe_js_1 = __importDefault(require("../../../../dfe/base/BaseNFe.js"));
 class NFEInutilizacaoService extends BaseNFe_js_1.default {
     constructor(environment, utility, xmlBuilder, axios, saveFiles, gerarConsulta) {
         super(environment, utility, xmlBuilder, 'NFEInutilizacao', axios, saveFiles, gerarConsulta);
