@@ -18,7 +18,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 
-const baseDir = __dirname;
+const baseDir = path.dirname(fileURLToPath(import.meta.url))
 const dir = process.env.NODE_ENV === 'production' ? '../resources/schemas' : '../resources/schemas/';
 
 /**
