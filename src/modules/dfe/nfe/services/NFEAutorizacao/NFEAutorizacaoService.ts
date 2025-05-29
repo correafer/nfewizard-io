@@ -168,46 +168,68 @@ class NFEAutorizacaoService extends BaseNFE implements NFEAutorizacaoServiceImpl
         return Math.floor(Math.random() * 100000000).toString().padStart(8, '0');
     }
 
-    private calcularModulo11(sequencia: string) {
-        const pesos = [4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-
-        let somatoria = 0;
-
-        for (let i = 0; i < sequencia.length; i++) {
-            somatoria += parseInt(sequencia.charAt(i)) * pesos[i];
-        }
-
-        const restoDivisao = somatoria % 11;
-        const digitoVerificador = restoDivisao === 0 || restoDivisao === 1 ? 0 : 11 - restoDivisao;
-
-        return digitoVerificador;
+    private calcularModulo11(sequencia: string): number {
+    if (sequencia.length !== 43) {
+        throw new Error(`[NFEAutorizacaoService.calcularModulo11] A sequência para cálculo do DV deve ter 43 dígitos. Recebido: ${sequencia.length}`);
     }
+    let soma = 0;
+    let peso = 2;
+    for (let i = sequencia.length - 1; i >= 0; i--) {
+        soma += parseInt(sequencia.charAt(i)) * peso;
+        peso++;
+        if (peso > 9) {
+            peso = 2;
+        }
+    }
+    const restoDivisao = soma % 11;
+    let dv = 11 - restoDivisao;
+    if (dv === 0 || dv === 10 || dv === 11) {
+        dv = 0;
+    }
+    return dv;
+}
 
     private calcularDigitoVerificador(data: LayoutNFe) {
-        const {
-            infNFe: {
-                ide: { cUF, mod, serie, nNF, tpEmis, cNF, dhEmi },
-                emit: { CNPJCPF }
-            }
-        } = data;
+    const {
+        infNFe: {
+            ide: { cUF, mod, serie, nNF, tpEmis, cNF, dhEmi },
+            emit: { CNPJCPF }
+        }
+    } = data;
 
-        const anoMes = this.anoMesEmissao(dhEmi);
+    const anoMes = this.anoMesEmissao(dhEmi);
 
-        // Montando a sequência para o cálculo do dígito verificador
-        const sequencia = `${cUF}${anoMes}${CNPJCPF}${mod}${String(serie).padStart(3, '0')}${String(nNF).padStart(9, '0')}${tpEmis}${cNF}`;
+    let docParaChave = String(CNPJCPF); 
+    if (docParaChave.length === 11) { // CPF
 
-        // Calculando o dígito verificador
-        const dv = this.calcularModulo11(sequencia);
+        docParaChave = docParaChave.padStart(14, '0');
 
-        // Montando a chave de acesso
-        const chaveAcesso = `NFe${sequencia}` + dv;
-        this.chaveNfe = `${sequencia}${dv}`;
+    } else if (docParaChave.length !== 14) {
 
-        return {
-            chaveAcesso,
-            dv
-        };
+        throw new Error(`Documento do emitente para chave tem comprimento inválido: ${docParaChave.length}`);
     }
+    
+    const cNFParsed = String(cNF); 
+    
+
+    const sequencia = `${cUF}${anoMes}${docParaChave}${mod}${String(serie).padStart(3, '0')}${String(nNF).padStart(9, '0')}${tpEmis}${cNFParsed}`;
+
+   if (sequencia.length !== 43) {
+      throw new Error(`Erro interno na formação da sequência da chave NFe (comprimento ${sequencia.length}).`);
+    }
+
+    // Calculando o dígito verificador
+    const dv = this.calcularModulo11(sequencia);
+
+    // Montando a chave de acesso
+    const chaveAcesso = `NFe${sequencia}` + dv;
+    this.chaveNfe = `${sequencia}${dv}`;
+
+    return {
+        chaveAcesso,
+        dv 
+    };
+}
 
     private validaDocumento(doc: string, campo: string) {
         // Valida se CPF ou CNPJ
