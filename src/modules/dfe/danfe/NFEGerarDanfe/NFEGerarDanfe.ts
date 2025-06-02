@@ -900,7 +900,7 @@ class NFEGerarDanfe {
             });
             this.doc.rect(left + 208, top, 17, defaultItemHeight).fillAndStroke('#DDDDDD', '#1c1c1c');
             this.setLineStyle(0.75, '#1c1c1c');
-            this.doc.text('CST', left + 208, top + 5.9, {
+            this.doc.text('O/CST', left + 208, top + 5.9, {
                 width: 17,
                 align: 'center'
             });
@@ -984,7 +984,7 @@ class NFEGerarDanfe {
 
                 const listaIcmsSemCST = [
                     'ICMSSN101',
-                    'ICMSSN102',
+                  //  'ICMSSN102',
                     'ICMSSN201',
                     'ICMSSN202',
                     'ICMSSN500',
@@ -997,7 +997,7 @@ class NFEGerarDanfe {
                 if (chavesICMS.length > 0) {
                 const tipoICMS = chavesICMS[0];
                     if (!icmsSemCST) {
-                        CST = (ICMS[tipoICMS] as any).CST;
+                        CST = (ICMS[tipoICMS] as any).CST || (ICMS[tipoICMS] as any).CSOSN;
                     }
                 }
                 return CST;
