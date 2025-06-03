@@ -44,6 +44,7 @@ class NFEGerarDanfe {
     barcodeBuffer: Buffer | null = null;
     logoUrl?: string; // Added logoUrl property
     logoBuffer: Buffer | null = null;
+     isNFeCanceled?: boolean;
 
     private productTableCurrentY: number = 0;
     private productTableHeaderHeight: number = 15; // defaultItemHeight in _buildProdutos
@@ -51,7 +52,7 @@ class NFEGerarDanfe {
     returnType?: string | undefined;
     
     constructor(props: NFEGerarDanfeProps) {
-        const { data, chave, outputPath, logoUrl,returnType } = props; // Destructure logoUrl
+        const { data, chave, outputPath, logoUrl,returnType,isNFeCanceled=false } = props; // Destructure logoUrl
         this.returnType = returnType;
         this.data = data;
         this.chave = chave.trim();
@@ -60,7 +61,7 @@ class NFEGerarDanfe {
         this.enviada = false;
         this.documento = new ValidaCPFCNPJ();
         this.protNFe = data.protNFe;
-
+         this.isNFeCanceled = isNFeCanceled;
         const nfeData = Array.isArray(data.NFe) ? data.NFe[0] : data.NFe;
         const { det, ide, emit, dest, total, transp, infAdic } = nfeData.infNFe;
 
@@ -121,6 +122,52 @@ class NFEGerarDanfe {
 
     drawFooter() {
         this._buildFooter();
+    }
+
+        // ... after _buildFooter() or before generatePDF() ...
+
+    private _drawCanceledWatermark() {
+        if (!this.isNFeCanceled) {
+            return;
+        }
+
+        const pages = this.doc.bufferedPageRange();
+        for (let i = pages.start; i < pages.count; i++) {
+            this.doc.switchToPage(i);
+
+            const { width, height } = this.doc.page;
+            const text = 'NOTA CANCELADA';
+            const fontSize = 80; // Adjust as needed
+            this.doc.font('Helvetica-Bold'); // Or another bold font
+            this.doc.fontSize(fontSize);
+
+            // Calculate text width to center it (approximately)
+            const textWidth = this.doc.widthOfString(text);
+
+            // Save current graphics state
+            this.doc.save();
+
+            // Set opacity for watermark effect
+            this.doc.opacity(0.65); // Adjust opacity (0.0 to 1.0)
+
+            // Translate and rotate
+            // Move to center of page, then adjust for text width/height and rotation
+            this.doc.translate(width / 2, height / 2)
+                .rotate(-45, { origin: [0, 0] }); // Rotate around the text's own center
+
+            // Draw the text slightly offset so the rotation origin is more centered
+            this.doc.fillColor('red') // Grey color for watermark
+                 .text(text, -textWidth / 2, -fontSize / 3, { // Adjust Y offset for better centering
+                lineBreak: false, // Prevent line breaks
+            });
+
+            // Restore graphics state
+            this.doc.restore();
+        }
+        // Switch back to the last page if multiple pages, or keep current if only one
+        if (pages.count > 0) {
+             this.doc.switchToPage(pages.count -1);
+        }
     }
 
     _buildGuia() {
@@ -1274,6 +1321,7 @@ class NFEGerarDanfe {
             this.doc.on('pageAdded', () => {
                 this.drawHeader(false); // Main header for new page
                 this.drawFooter();    // Main footer for new page
+                this._drawCanceledWatermark();
                 // Product table header continuation is handled within _buildProdutos
                 this.productTablePageNumber++;
                 // Reset Y for product table content on new page, accounting for main header
@@ -1288,6 +1336,7 @@ class NFEGerarDanfe {
             this._buildProdutos(); // Draws products, handles its own table headers on new pages
 
             this.drawFooter(); // Draw footer on the last page explicitly
+            this._drawCanceledWatermark();
 
             // --- Output Handling ---
             if (this.returnType === 'file') {

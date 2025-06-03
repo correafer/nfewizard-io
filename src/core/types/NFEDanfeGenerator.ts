@@ -52,4 +52,9 @@ export type NFEGerarDanfeProps = {
      * @param {string} returnType - base64 |  buffer | file
      */
     returnType?: string;
+
+               /**
+     * @param {boolean} isNFeCanceled - boolean se está cancelada ou não
+     */
+    isNFeCanceled?: boolean;
 };
