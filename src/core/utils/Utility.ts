@@ -272,20 +272,26 @@ class Utility {
     /**
      * Define o ambiente (UF e Produção ou Homologação) para geração das chaves de recuperação da URL do webservice
      */
-    setAmbiente(metodo: string, ambienteNacional = false, versao: string, mod: string) {
+    setAmbiente(metodo: string, ambienteNacional = false, versao: string, mod: string, eventTpAmb?: string | number) {
         const config = this.environment.getConfig();
-        const ambiente = config.nfe.ambiente === 2 ? 'H' : 'P';
+        let ambienteChar: string;
+
+        if (eventTpAmb) {
+            ambienteChar = eventTpAmb.toString() === "1" ? 'P' : 'H';
+        } else {
+            ambienteChar = config.nfe.ambiente === 2 ? 'H' : 'P';
+        }
 
         const versaoDF = versao !== "" ? versao : config.nfe.versaoDF;
 
         if (ambienteNacional) {
-            const chaveMae = `${mod}_AN_${ambiente}`;
+            const chaveMae = `${mod}_AN_${ambienteChar}`;
             const chaveFilha = `${metodo}_${versaoDF}`;
 
             return { chaveMae, chaveFilha };
         }
 
-        const chaveMae = `${mod}_${config.dfe.UF}_${ambiente}`;
+        const chaveMae = `${mod}_${config.dfe.UF}_${ambienteChar}`;
         const chaveFilha = `${metodo}_${versaoDF}`;
 
         return { chaveMae, chaveFilha };
@@ -294,11 +300,11 @@ class Utility {
     /**
      * Retorna a url correta do webservice
      */
-    getWebServiceUrl(metodo: string, ambienteNacional = false, versao = "", mod = "NFe"): string {
-        let { chaveMae, chaveFilha } = this.setAmbiente(metodo, ambienteNacional, versao, mod);
+    getWebServiceUrl(metodo: string, ambienteNacional = false, versao = "", mod = "NFe", eventTpAmb?: string | number): string {
+        let { chaveMae, chaveFilha } = this.setAmbiente(metodo, ambienteNacional, versao, mod, eventTpAmb);
         const urls = NFeServicosUrl as NFeServicosUrlType;
 
-        if ('Usar' in urls[chaveMae])
+        if (urls[chaveMae] && 'Usar' in urls[chaveMae])
             chaveMae = urls[chaveMae].Usar
 
         const url = urls[chaveMae] && urls[chaveMae][chaveFilha];

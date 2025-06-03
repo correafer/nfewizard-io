@@ -14,7 +14,7 @@ class GerarConsulta implements GerarConsultaImpl {
         this.xmlBuilder = xmlBuilder;
     }
 
-    async gerarConsulta(xmlConsulta: string, metodo: string, ambienteNacional = false, versao = "", mod = "NFe", rootTag: boolean = false, tag = "") {
+    async gerarConsulta(xmlConsulta: string, metodo: string, ambienteNacional = false, versao = "", mod = "NFe", rootTag: boolean = false, tag = "", eventTpAmb?: string | number) {
         try {
             const config = this.environment.getConfig();
             // Valida Schema
@@ -41,7 +41,7 @@ class GerarConsulta implements GerarConsultaImpl {
             const agent = this.environment.getHttpAgent();
 
             // Retorna a url do webservice NFEStatusServico
-            const webServiceUrl = this.utility.getWebServiceUrl(metodo, ambienteNacional, versao, mod);
+            const webServiceUrl = this.utility.getWebServiceUrl(metodo, ambienteNacional, versao, mod, eventTpAmb);
 
             return {
                 xmlFormated,

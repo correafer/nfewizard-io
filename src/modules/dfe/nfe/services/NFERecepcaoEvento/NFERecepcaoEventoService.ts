@@ -169,7 +169,7 @@ class NFERecepcaoEventoService extends BaseNFE implements NFERecepcaoEventoServi
                         Id: idEvento,
                     },
                     cOrgao: orgao,
-                    tpAmb: ambiente,
+                    tpAmb: tpAmb, // Use tpAmb from eventoProps
                     ...(CNPJ ? { CNPJ } : { CPF }),
                     chNFe: chNFe,
                     dhEvento: dhEvento,
@@ -255,7 +255,10 @@ class NFERecepcaoEventoService extends BaseNFE implements NFERecepcaoEventoServi
             // Gerando XML para consulta de Status do Serviço
             xmlConsulta = this.gerarXmlRecepcaoEvento(evento, idLote, ambienteNacional);
 
-            const { xmlFormated, agent, webServiceUrl, action } = await this.gerarConsulta.gerarConsulta(xmlConsulta, this.metodo, ambienteNacional || this.isAmbienteNacional(this.tpEvento), '', this.modelo);
+            // Extract tpAmb from the first event to pass to gerarConsulta
+            const eventTpAmb = evento[0]?.tpAmb;
+
+            const { xmlFormated, agent, webServiceUrl, action } = await this.gerarConsulta.gerarConsulta(xmlConsulta, this.metodo, ambienteNacional || this.isAmbienteNacional(this.tpEvento), '', this.modelo, false, '', eventTpAmb);
 
             xmlConsultaSoap = xmlFormated;
             webServiceUrlTmp = webServiceUrl;
